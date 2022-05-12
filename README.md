@@ -1,24 +1,22 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+# List of rake task to generate basket and add apple in basket
 Things you may want to cover:
 
-* Ruby version
+* This will create 50 Baskets in DB
+```
+rake data:generate_basket
+```
 
-* System dependencies
+* This will create number of Baskets in DB
+```
+rake data:generate_basket[pass any number here]
+```
 
-* Configuration
+* This will add apple in existing baskets (this will auto pick data in rake task)
+```
+rake data:add_apple_to_basket
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* This will add apple in existing baskets (first arges is variety and second one is count)
+```
+rake data:add_apple_to_basket[apple,400]
+```
