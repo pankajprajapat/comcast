@@ -1,24 +1,39 @@
-# README
+# Terminal 1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+class Apple
 
-Things you may want to cover:
+  attr_reader :variety, :origin, :history
+  def initialize(**args)
+    @variety = args[:variety]
+    @origin = args[:origin]
+    @history = args[:history]
+  end
+end
 
-* Ruby version
+apple = Apple.new(variety: 'Honeycrisp', origin: 'Minnesota', history: 'Introduction to Market: 1991')
+```
 
-* System dependencies
+* Marshal.dump(apple)
+This will generate a string that we will use in Terminal 2
 
-* Configuration
 
-* Database creation
+# Terminal 2
+```
+class Apple
 
-* Database initialization
+  attr_reader :variety, :origin, :history
+  def initialize(**args)
+    @variety = args[:variety]
+    @origin = args[:origin]
+    @history = args[:history]
+  end
+end
+```
 
-* How to run the test suite
+* paste string from terminal 1 to here
 
-* Services (job queues, cache servers, search engines, etc.)
+Example String:
+str = "\x04\bo:\nApple\b:\r@varietyI\"\x0FHoneycrisp\x06:\x06ET:\f@originI\"\x0EMinnesota\x06;\aT:\r@historyI\"!Introduction to Market: 1991\x06;\aT"
 
-* Deployment instructions
-
-* ...
+* apple = Marshal.load(str)
